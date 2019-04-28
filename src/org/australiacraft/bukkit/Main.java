@@ -1,5 +1,10 @@
 package org.australiacraft.bukkit;
 
+import java.util.List;
+
+import org.bukkit.craftbukkit.v1_13_R2.CraftServer;
+import org.bukkit.permissions.Permission;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -8,26 +13,41 @@ public class Main extends JavaPlugin {
 		
 		loadConfig();
 		
-		getCommand("hub").setExecutor(new HubCommand(this));
+		Permission sethubPerm = new Permission("hubmanager.sethubs");
+		
+		PluginManager pm = getServer().getPluginManager();
+		pm.addPermission(sethubPerm);
+		
 		getCommand("sethub").setExecutor(new SetHubCommand(this));
 	}
 	
 	public void loadConfig() {
 		
-		String hub_world = "hub.world";
-		String hub_x = "hub.x";
-		String hub_y = "hub.y";
-		String hub_z = "hub.z";
+		getLogger().info("Adding commands...");
 		
-		getConfig().addDefault(hub_world, "");
+		List<?> baseCommands = getConfig().getList("commands");
 		
-		getConfig().addDefault(hub_x, 0);
-		getConfig().addDefault(hub_y, 0);
-		getConfig().addDefault(hub_z, 0);
+		for (int i = 0; i < baseCommands.size(); i++ ) {
+			
+			String cmd = baseCommands.get(i).toString();
+			
+			getConfig().addDefault(cmd + ".message", "You have been teleported to %name%!%line%You can change this message in the config.");
+			getConfig().addDefault(cmd + ".world", "");
+			getConfig().addDefault(cmd + ".x", 0);
+			getConfig().addDefault(cmd + ".y", 0);
+			getConfig().addDefault(cmd + ".z", 0);
+			
+			
+			((CraftServer) this.getServer()).getCommandMap().register(cmd, new HubCommand(cmd, this));
+			
+			getLogger().info("Added the command `" + baseCommands.get(i) + "`.");	
+		}
 		
 		getConfig().options().copyDefaults(true);
 		
 		saveConfig();
+		
+		getLogger().info("The config has been loaded!");
 	}
 
 }

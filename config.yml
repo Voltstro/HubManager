@@ -1,0 +1,8 @@
+# BasicUtils - Created by AustraliaCraft/Creepysin 2019
+# https://github.com/AustraliaCraft/Basicutils
+
+# The list of commands to add
+commands:
+- hub
+
+# For you tp messages you can use '%name%' to say the hubs name and you can also use '%line%' for the next line. 

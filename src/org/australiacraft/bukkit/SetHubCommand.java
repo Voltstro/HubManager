@@ -1,5 +1,6 @@
 package org.australiacraft.bukkit;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,15 +21,23 @@ public class SetHubCommand implements CommandExecutor {
 		}
 		else {
 			Player player = (Player) sender;
-			
-			plugin.getConfig().set("hub.world", player.getLocation().getWorld().getName());
-			plugin.getConfig().set("hub.x", player.getLocation().getX());
-			plugin.getConfig().set("hub.y", player.getLocation().getY());
-			plugin.getConfig().set("hub.z", player.getLocation().getZ());
-			
-			plugin.saveConfig();
-			
-			player.sendMessage("The hub was successfully set!");
+			if(args.length == 1) {
+				
+				String hubCmd = args[0];
+				
+				plugin.getConfig().set(hubCmd + ".world", player.getLocation().getWorld().getName());
+				plugin.getConfig().set(hubCmd + ".x", player.getLocation().getX());
+				plugin.getConfig().set(hubCmd + ".y", player.getLocation().getY());
+				plugin.getConfig().set(hubCmd + ".z", player.getLocation().getZ());
+				
+				plugin.saveConfig();
+				
+				player.sendMessage("The hub was successfully set!");
+				
+			}
+			else {
+				player.sendMessage(ChatColor.RED + "There is either too many arguments or too little arguments!");
+			}
 		}
 		
 		return true;

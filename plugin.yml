@@ -1,12 +1,10 @@
-name: BasicUtils
+name: HubManager
 main: org.australiacraft.bukkit.Main
 version: 0.1
 author: Creepysin
-website: https://github.com/australiacraft/BasicUtils
+website: https://github.com/australiacraft/HubManager
 commands:
-  hub:
-    description: Tps you to the hub
-    usage: /<command>
   sethub:
     description: Sets the hub
     usgae: /<command>
+    permission: hubmanager.sethubs

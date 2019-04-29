@@ -1,5 +1,5 @@
 name: HubManager
-main: org.australiacraft.bukkit.Main
+main: org.australiacraft.hubmanager.Main
 version: 0.1
 author: Creepysin
 website: https://github.com/australiacraft/HubManager

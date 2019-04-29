@@ -1,4 +1,4 @@
-package org.australiacraft.bukkit;
+package org.australiacraft.hubmanager;
 
 import java.util.List;
 

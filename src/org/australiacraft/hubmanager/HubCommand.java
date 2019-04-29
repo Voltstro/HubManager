@@ -1,4 +1,4 @@
-package org.australiacraft.bukkit;
+package org.australiacraft.hubmanager;
 
 import org.bukkit.Location;
 import org.bukkit.World;

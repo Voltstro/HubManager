@@ -38,6 +38,13 @@ public class HubCommand extends BukkitCommand {
 			Player player = (Player) sender;
 			
 			World w = Bukkit.getServer().getWorld(plugin.getConfig().getString(hubCmd + ".world"));
+			
+			if(w == null) {
+				player.sendMessage(ChatColor.RED + "That hub hasn't been set yet!");
+				plugin.getLogger().info(ChatColor.RED + "The hub '" + hubCmd + "' hasn't been set! When in game do '/sethub " + hubCmd + "' to set the hub!");
+				return true;
+			}
+			
 			double x = plugin.getConfig().getDouble(hubCmd + ".x");
 			double y = plugin.getConfig().getDouble(hubCmd + ".y");
 			double z = plugin.getConfig().getDouble(hubCmd + ".z");

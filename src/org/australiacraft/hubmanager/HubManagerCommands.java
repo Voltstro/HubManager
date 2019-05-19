@@ -13,7 +13,6 @@ public class HubManagerCommands implements CommandExecutor {
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
 		if(args.length == 1) {
 			
 			if(args[0].equalsIgnoreCase("reload")) {

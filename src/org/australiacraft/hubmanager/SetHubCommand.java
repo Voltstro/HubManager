@@ -15,9 +15,8 @@ public class SetHubCommand implements CommandExecutor {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
 		if(!(sender instanceof Player)) {
-			sender.sendMessage("This cannot be uses by the console!");
+			sender.sendMessage("This command cannot be used by the console!");
 		}
 		else {
 			Player player = (Player) sender;

@@ -10,7 +10,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
 	public void onEnable() {
-		
 		loadConfig();
 		
 		Permission sethubPerm = new Permission("hubmanager.sethubs");
@@ -23,7 +22,6 @@ public class Main extends JavaPlugin {
 	}
 	
 	public void loadConfig() {
-		
 		getLogger().info("Adding commands...");
 		
 		List<?> baseCommands = getConfig().getList("commands");
@@ -44,8 +42,9 @@ public class Main extends JavaPlugin {
 		}
 		
 		getConfig().options().copyDefaults(true);
-		
 		saveConfig();
+		
+		getCommand("hubs").setExecutor(new AllHubsCommand(baseCommands));
 		
 		getLogger().info("The config has been loaded!");
 	}

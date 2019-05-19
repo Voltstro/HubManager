@@ -1,6 +1,6 @@
 name: HubManager
 main: org.australiacraft.hubmanager.Main
-version: 0.1.3
+version: 1.0
 author: Australiacraft Team
 authors: [Creepysin]
 website: https://github.com/australiacraft/HubManager
@@ -12,3 +12,7 @@ commands:
   hubmanager:
     description: Hubmanager commands
     usgae: /<command>
+  hubs:
+    description: Gets all hubs
+    usgae: /<command>
+    permission: hubmanager.hubs

@@ -26,7 +26,7 @@ public class HubCommand extends BukkitCommand {
 	@Override
 	public boolean execute(CommandSender sender, String label, String[] args) {
 		if(!(sender instanceof Player)) {
-			sender.sendMessage("This cannot be uses by the console!");
+			sender.sendMessage("This command cannot be used by the console!");
 		}
 		else {
 			
@@ -39,9 +39,10 @@ public class HubCommand extends BukkitCommand {
 			
 			World w = Bukkit.getServer().getWorld(plugin.getConfig().getString(hubCmd + ".world"));
 			
+			//If the world equals null, then don't teleport and put a warning in the console.
 			if(w == null) {
 				player.sendMessage(ChatColor.RED + "That hub hasn't been set yet!");
-				plugin.getLogger().info(ChatColor.RED + "The hub '" + hubCmd + "' hasn't been set! When in game do '/sethub " + hubCmd + "' to set the hub!");
+				plugin.getLogger().warning(ChatColor.RED + "The hub '" + hubCmd + "' hasn't been set! When in game do '/sethub " + hubCmd + "' to set the hub!");
 				return true;
 			}
 			
@@ -58,7 +59,8 @@ public class HubCommand extends BukkitCommand {
 				
 				// Send the player the formated message.
 				String formatMessage = plugin.getConfig().getString(hubCmd + ".message").replace("%name%", hubCmd).replace("%line%", "\n");
-				player.sendMessage(formatMessage);
+				if(!formatMessage.equalsIgnoreCase(""))
+					player.sendMessage(formatMessage);
 			}
 		}
 		

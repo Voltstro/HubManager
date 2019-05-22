@@ -18,7 +18,7 @@ To download the plugin just [go to the releases](https://github.com/australiacra
 
 Open the project in Eclipse then right click on the project, the go to **Export**.
 
-Once in that menu ot to **JAR FILE** -> And select where to export to.
+Once in that menu go to **JAR FILE** -> And select where to export to.
 
 ## Authors
 

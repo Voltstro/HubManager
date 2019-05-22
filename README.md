@@ -1,6 +1,6 @@
 # HubManager
 
-[![License](https://img.shields.io/github/license/australiacraft/HubManager.svg?style=flat-square)](https://github.com/Creepysin/Pootis-Bot/blob/master/LICENSE.md) 
+[![License](https://img.shields.io/github/license/australiacraft/HubManager.svg?style=flat-square)](https://github.com/australiacraft/HubManager/blob/master/LICENSE) 
 [![Discord](https://img.shields.io/badge/Discord-Creepysin-7289da.svg?style=flat-square&logo=discord)](https://discord.creepysin.com) 
 [![Youtube](https://img.shields.io/badge/Youtube-Creepysin-red.svg?style=flat-square&logo=youtube)](https://www.youtube.com/channel/UCGE1RiKvxmhB1mEVzJS0MtA)
 

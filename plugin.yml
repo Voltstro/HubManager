@@ -1,6 +1,7 @@
 name: HubManager
 main: org.australiacraft.hubmanager.Main
 version: 1.0
+api-version: 1.14
 author: Australiacraft Team
 authors: [Creepysin]
 website: https://github.com/australiacraft/HubManager

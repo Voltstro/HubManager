@@ -2,7 +2,7 @@ package org.australiacraft.hubmanager;
 
 import java.util.List;
 
-import org.bukkit.craftbukkit.v1_13_R2.CraftServer;
+import org.bukkit.craftbukkit.v1_14_R1.CraftServer;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

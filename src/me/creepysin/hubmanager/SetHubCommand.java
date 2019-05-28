@@ -1,12 +1,16 @@
-package org.australiacraft.hubmanager;
+package me.creepysin.hubmanager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-public class SetHubCommand implements CommandExecutor {
+public class SetHubCommand implements CommandExecutor, TabCompleter {
 
 	private Main plugin;
 	
@@ -24,6 +28,18 @@ public class SetHubCommand implements CommandExecutor {
 				
 				String hubCmd = args[0];
 				
+				boolean doesExist = false;
+				for(int i = 0; i < plugin.baseCommands.size(); i++ ) {
+					if(hubCmd.equalsIgnoreCase(plugin.baseCommands.get(i).toString())) {
+						doesExist = true;
+					}
+				}
+				
+				if(doesExist == false) {
+					player.sendMessage(ChatColor.RED + "That hub doesn't exist!");
+					return true;
+				}
+
 				plugin.getConfig().set(hubCmd + ".world", player.getLocation().getWorld().getName());
 				plugin.getConfig().set(hubCmd + ".x", player.getLocation().getX());
 				plugin.getConfig().set(hubCmd + ".y", player.getLocation().getY());
@@ -41,5 +57,21 @@ public class SetHubCommand implements CommandExecutor {
 		
 		return true;
 	}
-
+	
+	public List<String> onTabComplete (CommandSender sender, Command cmd, String label, String[] args) {
+		if(sender instanceof Player) {
+			Player player = (Player) sender;
+			List<String> subCmds = new ArrayList<String>();
+			
+			for(int i = 0; i < plugin.baseCommands.size(); i++ ) {
+				if(player.hasPermission("hubmanager.hubs." + plugin.baseCommands.get(i))) {
+					subCmds.add(plugin.baseCommands.get(i).toString());
+				}
+			}
+			
+			return subCmds;
+		}
+		
+		return null;	
+	}
 }

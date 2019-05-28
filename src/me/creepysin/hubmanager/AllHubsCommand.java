@@ -1,4 +1,4 @@
-package org.australiacraft.hubmanager;
+package me.creepysin.hubmanager;
 
 import java.util.List;
 

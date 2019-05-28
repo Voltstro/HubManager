@@ -1,21 +1,26 @@
-package org.australiacraft.hubmanager;
+package me.creepysin.hubmanager;
 
 import java.util.List;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_14_R1.CraftServer;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
+	public List<?> baseCommands;
 
 	public void onEnable() {
 		loadConfig();
 		
+		// Add the permissions
 		Permission sethubPerm = new Permission("hubmanager.sethubs");
+		Permission reloadPerm = new Permission("hubmanager.reload");
 		
 		PluginManager pm = getServer().getPluginManager();
 		pm.addPermission(sethubPerm);
+		pm.addPermission(reloadPerm);
 		
 		getCommand("sethub").setExecutor(new SetHubCommand(this));
 		getCommand("hubmanager").setExecutor(new HubManagerCommands(this));
@@ -24,8 +29,9 @@ public class Main extends JavaPlugin {
 	public void loadConfig() {
 		getLogger().info("Adding commands...");
 		
-		List<?> baseCommands = getConfig().getList("commands");
+		baseCommands = getConfig().getList("commands");
 		
+		// Load in each command
 		for (int i = 0; i < baseCommands.size(); i++ ) {
 			
 			String cmd = baseCommands.get(i).toString();
@@ -47,6 +53,12 @@ public class Main extends JavaPlugin {
 		getCommand("hubs").setExecutor(new AllHubsCommand(baseCommands));
 		
 		getLogger().info("The config has been loaded!");
+	}
+	
+	public void Reload(CommandSender sender) {
+		sender.sendMessage("Reloading...");
+		this.reloadConfig();
+		sender.sendMessage("Reloaded config! Any new commands added will require the server to resart.");
 	}
 
 }

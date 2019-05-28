@@ -1,10 +1,9 @@
 name: HubManager
-main: org.australiacraft.hubmanager.Main
-version: 1.0
+main: me.creepysin.hubmanager.Main
+version: 1.1
 api-version: 1.14
-author: Australiacraft Team
-authors: [Creepysin]
-website: https://github.com/australiacraft/HubManager
+author: Creepysin
+website: https://github.com/Creepysin/HubManager
 commands:
   sethub:
     description: Sets the hub

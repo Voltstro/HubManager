@@ -1,8 +1,22 @@
-# BasicUtils - Created by AustraliaCraft/Creepysin 2019
-# https://github.com/AustraliaCraft/Basicutils
-
-# The list of commands to add
+# HubManager - Created by Creepysin 2019
+# https://github.com/Creepysin/HubManager
+#
+#
 commands:
 - hub
+
+# Do you want to out a log everytime a cmd is added?
+outputAddedCmds: true
+
+# The interactable signs
+signs:
+  # Are they enabled?
+  enabled: true
+
+  # If each of the remaining lines, can have a maxium of up to four since the top one is for the tag.
+  # You can use %hubname% to put the hub name in it
+  messages:
+  - 'Click to be'
+  - 'teleported.'
 
 # For you tp messages you can use '%name%' to say the hubs name and you can also use '%line%' for the next line. 

@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Servers/Test Plugin Server/spigot-1.14.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/Minecraft/Jars/spigot-1.14.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

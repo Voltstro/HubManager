@@ -24,11 +24,11 @@ public class HubManagerCommands implements CommandExecutor, TabCompleter {
 				if(sender instanceof Player) {
 					Player player = (Player) sender;
 					if(player.hasPermission("hubmanager.reload")) {
-						plugin.Reload(sender);
+						plugin.reload(sender);
 					}
 				}
 				else {
-					plugin.Reload(sender);
+					plugin.reload(sender);
 				}
 			}
 			else if(args[0].equalsIgnoreCase("about")) {
@@ -64,8 +64,6 @@ public class HubManagerCommands implements CommandExecutor, TabCompleter {
 			subCmds.add("reload");
 		}
 		
-		return subCmds;
-		
+		return subCmds;	
 	}
-
 }

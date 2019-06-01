@@ -1,4 +1,4 @@
-package me.creepysin.hubmanager;
+package me.creepysin.hubmanager.cmds;
 
 import java.util.List;
 

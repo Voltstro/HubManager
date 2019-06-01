@@ -2,11 +2,18 @@ package me.creepysin.hubmanager;
 
 import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_14_R1.CraftServer;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import me.creepysin.hubmanager.cmds.AllHubsCommand;
+import me.creepysin.hubmanager.cmds.HubCommand;
+import me.creepysin.hubmanager.cmds.HubManagerCommands;
+import me.creepysin.hubmanager.cmds.SetHubCommand;
+import me.creepysin.hubmanager.listeners.HubSignListeners;
 
 public class Main extends JavaPlugin {
 	public List<?> baseCommands;
@@ -23,12 +30,14 @@ public class Main extends JavaPlugin {
 		Permission reloadPerm = new Permission("hubmanager.reload");
 		Permission signsCreatePerm = new Permission("hubmanager.signs.create");
 		Permission signsInteractPerm = new Permission("hubmanager.signs.interact");
+		Permission signsBreakPerm = new Permission("hubmanager.signs.break");
 		
 		PluginManager pm = getServer().getPluginManager();
 		pm.addPermission(sethubPerm);
 		pm.addPermission(reloadPerm);
 		pm.addPermission(signsCreatePerm);
 		pm.addPermission(signsInteractPerm);
+		pm.addPermission(signsBreakPerm);
 		
 		// Add commands
 		getCommand("sethub").setExecutor(new SetHubCommand(this));
@@ -39,7 +48,7 @@ public class Main extends JavaPlugin {
 			getServer().getPluginManager().registerEvents(new HubSignListeners(this, hubTele), this);
 		}
 		
-		getLogger().info("HubManger has been loaded!");
+		getLogger().info(ChatColor.GREEN + "HubManager is now enabled!");
 		
 	}
 	

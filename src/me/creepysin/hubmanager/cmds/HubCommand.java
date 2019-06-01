@@ -1,7 +1,10 @@
-package me.creepysin.hubmanager;
+package me.creepysin.hubmanager.cmds;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import me.creepysin.hubmanager.HubTeleport;
+
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.ChatColor;
 
@@ -10,7 +13,7 @@ public class HubCommand extends BukkitCommand {
 	private String hubCmd;
 	private HubTeleport hubTeleport;
 	
-	protected HubCommand(String name, HubTeleport _hubTele) {
+	public HubCommand(String name, HubTeleport _hubTele) {
 		super(name);
 		this.description = "Goes to a hub";
 		this.usageMessage = "/<Command>";

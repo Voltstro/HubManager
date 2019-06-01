@@ -19,4 +19,6 @@ signs:
   - 'Click to be'
   - 'teleported.'
 
+  signHubColor: '§b'
+
 # For you tp messages you can use '%name%' to say the hubs name and you can also use '%line%' for the next line. 

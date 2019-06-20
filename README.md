@@ -1,8 +1,8 @@
 # HubManager
 
-[![License](https://img.shields.io/github/license/Creepysin/HubManager.svg?style=flat-square)](https://github.com/australiacraft/HubManager/blob/master/LICENSE) 
+[![License](https://img.shields.io/github/license/Creepysin/HubManager.svg?style=flat-square)](https://github.com/Creepysin/HubManager/blob/master/LICENSE) 
 [![Discord](https://img.shields.io/badge/Discord-Creepysin-7289da.svg?style=flat-square&logo=discord)](https://discord.creepysin.com) 
-[![Youtube](https://img.shields.io/badge/Youtube-Creepysin-red.svg?style=flat-square&logo=youtube)](https://www.youtube.com/channel/UCGE1RiKvxmhB1mEVzJS0MtA)
+[![Youtube](https://img.shields.io/badge/Youtube-Creepysin-red.svg?style=flat-square&logo=youtube)](https://www.youtube.com/Creepysin)
 
 HubManager - Add commands to your Minecraft server such as /hub to make it easier for your players to get around
 

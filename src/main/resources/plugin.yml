@@ -1,6 +1,6 @@
 name: HubManager
-main: me.creepysin.hubmanager.Main
-version: 1.3
+main: com.creepysin.hubmanager.HubManager
+version: 2.0.0
 api-version: 1.14
 author: Creepysin
 website: https://github.com/Creepysin/HubManager
@@ -9,11 +9,6 @@ commands:
   sethub:
     description: Sets the hub
     usgae: /<command>
-    permission: hubmanager.sethubs
-  hubmanager:
-    description: Hubmanager commands
-    usgae: /<command>
   hubs:
-    description: Gets all hubs
+    description: Gets a list of all hubs
     usgae: /<command>
-    permission: hubmanager.hubs

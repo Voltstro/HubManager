@@ -1,6 +1,7 @@
 # HubManager
 
-[![License](https://img.shields.io/github/license/Creepysin/HubManager.svg)](https://github.com/Creepysin/HubManager/blob/master/LICENSE) 
+[![License](https://img.shields.io/github/license/Creepysin/HubManager.svg)](https://github.com/Creepysin/HubManager/blob/master/LICENSE)
+[![Azure DevOps builds](https://img.shields.io/azure-devops/build/Creepysin/8e806767-dd04-41af-8b2f-996c87a6d5da/2)](https://dev.azure.com/Creepysin/HubManager)
 [![Discord](https://img.shields.io/badge/Discord-Creepysin-7289da.svg?logo=discord)](https://discord.creepysin.com) 
 [![Youtube](https://img.shields.io/badge/Youtube-Creepysin-red.svg?logo=youtube)](https://www.youtube.com/Creepysin)
 
